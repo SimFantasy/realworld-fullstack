@@ -1,0 +1,19 @@
+@host = http://localhost:5712/api
+@contentType = Content-Type
+@token = 123456
+
+### Get Comments
+GET {{host}}/articles/test-article-title/comments
+
+### Create Comment
+POST {{host}}/articles/test-article-title/comments
+
+{
+  "comment": {
+    "body": "test comment 1"
+  }
+}
+
+
+### Remove Comment
+DELETE {{host}}/articles/test-article-title/comments

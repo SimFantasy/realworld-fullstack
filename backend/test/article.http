@@ -1,0 +1,46 @@
+@host = http://localhost:5712/api
+@contentType = Content-Type
+@token = 123456
+
+### Get Articles
+GET {{host}}/articles
+
+### Get Feed Articles
+GET {{host}}/articles/feed
+
+### Get Article
+GET {{host}}/articles/abc
+
+### Create Article
+POST {{host}}/articles
+
+{
+  "article": {
+    "slug": "test-article-title",
+    "title": "test article title",
+    "description": "test description",
+    "body": "test article content",
+    "tagList": ["test", "article", "title"]
+  }
+}
+
+### Update Article
+PUT {{host}}/articles/test-article-title
+
+{
+  "article": {
+    "title": "test article title two"
+  }
+}
+
+### Remove Article
+DELETE {{host}}/articles/test-article-title
+
+### Favorite Article
+POST {{host}}/articles/test-article-title/favorite
+
+### UnFavorite Article
+DELETE {{host}}/articles/text-article-title/favorite
+
+### Get Tags
+GET {{host}}/tags

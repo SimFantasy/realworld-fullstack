@@ -1,0 +1,12 @@
+@host = http://localhost:5712/api
+@contentType = Content-Type
+@token = 123456
+
+### Get User Profile
+GET {{host}}/profiles/jacky
+
+### Follow User
+POST {{host}}/profiles/jacky/follow
+
+### Unfollow User
+DELETE {{host}}/profiles/jacky/follow

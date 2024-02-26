@@ -1,0 +1,37 @@
+@host = http://localhost:5712/api
+@contentType = Content-Type
+@token = 123456
+
+### Register
+POST {{host}}/users
+Content-Type: {{contentType}}
+
+{
+  "user": {
+    "username": "jacky",
+    "email": "jacky@sim.com",
+    "password": "123456" 
+  }
+}
+
+### Login
+POST {{host}}/users/login
+
+{
+  "user": {
+    "email": "sim@sim.com",
+    "password": "123456"
+  }
+}
+
+### Current User
+GET {{host}}/user
+
+### Update User
+PUT {{host}}/user
+
+{
+  "user": {
+    "username": "jacky1"
+  }
+}
