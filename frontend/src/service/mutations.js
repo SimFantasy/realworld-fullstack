@@ -8,3 +8,7 @@ export const useRegister = createMutation({
 export const useLogin = createMutation({
   mutationFn: async user => await apis.User.login(user)
 })
+
+export const useCreateArticle = createMutation({
+  mutationFn: async article => await apis.Article.create(article)
+})

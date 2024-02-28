@@ -6,6 +6,7 @@ class UserController {
 	// register
 	async register(ctx) {
 		const { user } = ctx.request.body
+		console.log('user', user)
 
 		const userValidator = await registerValidator(user)
 		if (userValidator) {

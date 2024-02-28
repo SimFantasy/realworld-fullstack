@@ -28,7 +28,7 @@ const NavBar = () => {
               alt='profile pic'
               className='w-8 h-8 rounded-full'
             />
-            <div className='font-semibold'>{currentUser.user.username}</div>
+            <div className='font-semibold'>{currentUser?.user.username}</div>
           </NavLink>
           <button className='bg-transparent border-0 outline-none' onClick={logout}>
             <RiLogoutBoxRLine size={18} stroke={1} className='text-gray-500' />

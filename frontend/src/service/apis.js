@@ -14,8 +14,8 @@ const Profile = {
 }
 
 const Article = {
-  feed: async (primaryKey, params) => await fetcher(primaryKey, { params: { ...params } }),
-  all: async (primaryKey, params) => await fetcher(primaryKey, { params: { ...params } }),
+  feed: async params => await fetcher('/articles', { params: { ...params } }),
+  all: async params => await fetcher('/articles', { params: { ...params } }),
   create: async article => await fetcher.post('/articles', { article }),
   view: async path => await fetcher(path),
   update: async (slug, article) => await fetcher.put(`/articles/${slug}`, { article }),
@@ -35,7 +35,7 @@ const Favorite = {
 }
 
 const Tag = {
-  tags: async url => await fetcher(url)
+  tags: async () => await fetcher('/tags')
 }
 
 export default { User, Profile, Article, Comment, Favorite, Tag }

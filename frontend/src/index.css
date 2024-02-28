@@ -56,4 +56,21 @@
   .form-button {
     @apply px-6 py-3 flex justify-center items-center bg-green-600 hover:bg-green-700 text-white rounded cursor-pointer;
   }
+  /* Tags */
+  .tags {
+    @apply flex flex-wrap gap-2;
+  }
+  .tags .tag-item {
+    @apply px-2 py-1 bg-green-500 text-sm text-white rounded-md hover:bg-green-700 hover:cursor-pointer;
+  }
+  /* Tabs */
+  .tabs {
+    @apply flex justify-start items-center h-12 border-b border-gray-200;
+  }
+  .tabs .tab-item {
+    @apply flex justify-center items-center px-4 h-full text-gray-500 text-lg;
+  }
+  .tabs .tab-item.active {
+    @apply text-green-500 border-b-[2px] border-green-500 font-semibold;
+  }
 }
