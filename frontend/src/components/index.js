@@ -8,6 +8,7 @@ export { default as Footer } from '@/components/layout/footer'
 export { default as Loader } from '@/components/common/loader'
 export { default as CheckAuth } from '@/components/common/check-auth'
 export { default as ErrorMessage } from '@/components/common/error-message'
+export { default as Pagination } from '@/components/common/pagination'
 
 // Auth
 export { default as Login } from '@/components/auth/login'

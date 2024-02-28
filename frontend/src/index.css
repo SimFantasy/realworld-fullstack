@@ -73,4 +73,14 @@
   .tabs .tab-item.active {
     @apply text-green-500 border-b-[2px] border-green-500 font-semibold;
   }
+  /* Pagination */
+  .pagination {
+    @apply flex justify-start items-center gap-2;
+  }
+  .pagination button {
+    @apply px-2 py-1 min-w-[32px] border border-gray-300 rounded text-sm text-gray-500 hover:border-green-300 hover:text-green-500 hover:bg-green-200;
+  }
+  .pagination button.active {
+    @apply border-green-500 bg-green-500 text-white;
+  }
 }

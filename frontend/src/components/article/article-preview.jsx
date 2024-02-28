@@ -1,11 +1,25 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FavoriteButton } from '@/components'
 import { RiHeartLine, RiHailFill } from '@remixicon/react'
+import { useFavorite, useUnFavorite } from '@/service/mutations'
+import { formatDate } from '@/utils'
 
 const ArticlePreview = ({ article }) => {
   console.log('article', article)
+  const { mutate: favorite } = useFavorite()
+  const { mutate: unFavorite } = useUnFavorite()
+
+  const handleFavorite = () => {
+    if (article?.favorited) {
+      unFavorite(article?.slug, {})
+    } else {
+      favorite(article?.slug)
+    }
+  }
+
   return (
-    <div className='flex flex-col gap-2 w-full'>
+    <div className='flex flex-col gap-2 py-6 w-full border-b border-gray-300 border-dotted'>
       <div className='flex justify-between items-center h-10 py-4'>
         <div className='flex justify-start items-center gap-2'>
           <img src={article?.author?.image} className='w-10 h-10 rounded-full' />
@@ -16,10 +30,10 @@ const ArticlePreview = ({ article }) => {
             >
               {article?.author.username}
             </Link>
-            <p className='text-gray-400 text-sm'>{article?.createdAt}</p>
+            <p className='text-gray-400 text-sm'>{formatDate(article?.createdAt)}</p>
           </div>
         </div>
-        <FavoriteButton avorited={article?.favorited}>
+        <FavoriteButton favorited={article?.favorited} onClick={handleFavorite}>
           {article?.favorited ? <RiHailFill size={18} /> : <RiHeartLine size={18} />}
           {article?.favoritesCount}
         </FavoriteButton>
