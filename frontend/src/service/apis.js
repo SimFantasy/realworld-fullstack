@@ -17,7 +17,7 @@ const Article = {
   feed: async params => await fetcher('/articles', { params: { ...params } }),
   all: async params => await fetcher('/articles', { params: { ...params } }),
   create: async article => await fetcher.post('/articles', { article }),
-  view: async path => await fetcher(path),
+  view: async slug => await fetcher(`/articles/${slug}`),
   update: async (slug, article) => await fetcher.put(`/articles/${slug}`, { article }),
   remove: async slug => await fetcher.delete(`/articles/${slug}`)
 }

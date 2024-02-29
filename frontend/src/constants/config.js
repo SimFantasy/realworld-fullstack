@@ -1,9 +1,9 @@
 const TIMEOUT = 50000
 const LOCAL_SERVER = 'http://localhost:5712/api'
 const ONLINE_SERVER = 'https://api.realworld.io/api'
-const BASE_URL = LOCAL_SERVER
+const BASE_URL = ONLINE_SERVER
 
-const PAGE_SIZE = 10
+const PAGE_SIZE = 2
 
 const JWT_KEY = 'sim@rw-jwt'
 

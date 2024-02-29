@@ -14,9 +14,9 @@ export const useCreateArticle = createMutation({
 })
 
 export const useFavorite = createMutation({
-  mutationFn: async slug => await apis.Favorite.favorite(slug)
+  mutationFn: async variables => await apis.Favorite.favorite(variables.slug)
 })
 
 export const useUnFavorite = createMutation({
-  mutationFn: async slug => await apis.Favorite.unfavorite(slug)
+  mutationFn: async variables => await apis.Favorite.unfavorite(variables.slug)
 })

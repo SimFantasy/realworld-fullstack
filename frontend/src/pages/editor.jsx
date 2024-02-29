@@ -59,7 +59,7 @@ const Editor = () => {
 
           <div className='form-control'>
             <label htmlFor='boy'>Content</label>
-            <textarea className='form-textarea' {...register('body')}></textarea>
+            <textarea className='form-textarea h-[240px]' {...register('body')}></textarea>
             <p className='form-error'>{errors.body?.message}</p>
           </div>
 

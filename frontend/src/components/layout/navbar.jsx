@@ -24,7 +24,7 @@ const NavBar = () => {
           </NavLink>
           <NavLink to='/profile/jacky' className='flex gap-2 items-center'>
             <img
-              src={isAuth ? currentUser?.user.image : '/images/default_avatar.jpg'}
+              src={isAuth && (currentUser?.user.image ?? '/images/default_avatar.jpg')}
               alt='profile pic'
               className='w-8 h-8 rounded-full'
             />
